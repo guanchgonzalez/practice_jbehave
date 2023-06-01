@@ -11,13 +11,12 @@ import org.jbehave.core.i18n.LocalizedKeywords;
 import org.jbehave.core.io.CodeLocations;
 import org.jbehave.core.io.LoadFromClasspath;
 import org.jbehave.core.io.StoryFinder;
-import org.jbehave.core.junit.JUnitReportingRunner;
+import org.jbehave.core.junit.JUnit4StoryRunner;
 import org.jbehave.core.junit.JUnitStories;
 import org.jbehave.core.model.ExamplesTableFactory;
 import org.jbehave.core.model.TableTransformers;
 import org.jbehave.core.parsers.RegexPrefixCapturingPatternParser;
 import org.jbehave.core.parsers.RegexStoryParser;
-import org.jbehave.core.reporters.CrossReference;
 import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
@@ -42,12 +41,12 @@ import static org.jbehave.core.reporters.Format.XML;
  * Stories are specified in classpath and correspondingly the {@link LoadFromClasspath} story loader is configured.
  * </p> 
  */
-@RunWith(JUnitReportingRunner.class)
+@RunWith(JUnit4StoryRunner.class)
 public class MyStories extends JUnitStories {
     
     public MyStories() {
         configuredEmbedder().embedderControls().doGenerateViewAfterStories(true).doIgnoreFailureInStories(true)
-                .doIgnoreFailureInView(true).useThreads(2).useStoryTimeoutInSecs(60);
+                .doIgnoreFailureInView(true).useThreads(2);
     }
 
     @Override
@@ -59,8 +58,7 @@ public class MyStories extends JUnitStories {
         // Start from default ParameterConverters instance
         ParameterConverters parameterConverters = new ParameterConverters(resourceLoader, tableTransformers);
         // factory to allow parameter conversion and loading from external resources (used by StoryParser too)
-        ExamplesTableFactory examplesTableFactory = new ExamplesTableFactory(new LocalizedKeywords(), resourceLoader,
-                parameterConverters, parameterControls, tableTransformers);
+        ExamplesTableFactory examplesTableFactory = new ExamplesTableFactory(resourceLoader, tableTransformers);
         // add custom converters
         parameterConverters.addConverters(new DateConverter(new SimpleDateFormat("yyyy-MM-dd")),
                 new ExamplesTableConverter(examplesTableFactory));
