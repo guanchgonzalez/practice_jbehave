@@ -10,12 +10,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+
 public class ChromeBrowser {
+
+  // Browser driver (webdriver)
+  private WebDriver driver = new ChromeDriver();
+
   /**
-   * @param args
-   * @throws InterruptedException
+   * Driver constructor
+   * 
+   * @param optionList
    */
-  public static void main(String[] args) throws InterruptedException {
+  public ChromeBrowser() {
     String URL = "https://www.google.com/";
     String[] optionList = {
       "test-type",
@@ -23,6 +29,7 @@ public class ChromeBrowser {
       "incognito",
     };
 
+    // Instantiate ChromeOptions
     WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();
     options.addArguments(optionList);
@@ -32,17 +39,25 @@ public class ChromeBrowser {
     String driverPath = "/webdriver/chromedriver";
     System.setProperty("webdriver.chrome.driver", rootPath + driverPath);
 
-    WebDriver driver = new ChromeDriver(options);
+    driver = new ChromeDriver(options);
     driver.get(URL);
     driver.findElement(By.id("L2AGLb")).click();
-    
+  }
+  
+  /**
+   * Search a text into the driver
+   * 
+   * @param searchText
+   * @throws InterruptedException
+   */
+  public void browserSearch(String searchText) throws InterruptedException {
     WebElement searchBox = driver.findElement(By.name("q"));
     searchBox.sendKeys("JBehave");
-
     WebDriverWait w2res = new WebDriverWait(driver, Duration.ofSeconds(5));
     w2res.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul")));
     searchBox.submit();
-    Thread.sleep(10000);
+    //Thread.sleep(10000);
     driver.quit();
   }
+
 }

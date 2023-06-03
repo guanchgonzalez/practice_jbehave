@@ -22,7 +22,7 @@ import org.jbehave.core.steps.ParameterConverters;
 import org.jbehave.core.steps.ParameterConverters.DateConverter;
 import org.jbehave.core.steps.ParameterConverters.ExamplesTableConverter;
 import org.junit.runner.RunWith;
-import test.practice.steps.MySteps;
+import test.practice.steps.JBehaveSteps;
 
 import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 import static org.jbehave.core.reporters.Format.CONSOLE;
@@ -76,7 +76,7 @@ public class JBehaveStories extends JUnitStories {
 
     @Override
     public InjectableStepsFactory stepsFactory() {
-        return new InstanceStepsFactory(configuration(), new MySteps());
+        return new InstanceStepsFactory(configuration(), new JBehaveSteps());
     }
 
     @Override
