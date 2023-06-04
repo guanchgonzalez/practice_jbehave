@@ -19,23 +19,12 @@ BeforeSystemScenarioSteps
 
 BeforeUserScenarioSteps
 
-Given A Chrome browser with the Google home page (FAILED)
-(org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='q']"}
-  (Session info: chrome=114.0.5735.90)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.9.1', revision: 'eb2032df7f'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.4', java.version: '20.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [02c07fb0ed3c9947f3c54cf229a4ce6c, findElement {using=name, value=q}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/tg/_zsl4_n574z...}, goog:chromeOptions: {debuggerAddress: localhost:64852}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:64852/devtoo..., se:cdpVersion: 114.0.5735.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 02c07fb0ed3c9947f3c54cf229a4ce6c)
-And I search for "JBehave" (NOT PERFORMED)
+Given A Chrome browser with "https://www.google.com/" and search for "JBehave" (PENDING)
+(null)
 When A response includes "What is JBehave?" (NOT PERFORMED)
-Then Status is OK for "What is JBehave?" (PENDING)
-(null)
+Then Status is OK for "What is JBehave?" (NOT PERFORMED)
 When A response not includes "What is JBehave?" (NOT PERFORMED)
-Then Status is NOK for "What is JBehave?" (PENDING)
-(null)
+Then Status is NOK for "What is JBehave?" (NOT PERFORMED)
 AfterUserScenarioSteps
 
 AfterSystemScenarioSteps

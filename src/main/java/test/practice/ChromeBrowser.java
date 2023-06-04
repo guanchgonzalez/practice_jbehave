@@ -16,7 +16,12 @@ public class ChromeBrowser {
   // Browser driver (webdriver)
   private WebDriver driver = new ChromeDriver();
 
-  public ChromeBrowser() {
+  /**
+   * Driver constructor
+   * 
+   * @param searchText
+   */
+  public ChromeBrowser(String searchText) {
     String URL = "https://www.google.com/";
     String[] optionList = {
       "test-type",
@@ -30,22 +35,16 @@ public class ChromeBrowser {
     options.addArguments(optionList);
 
     // Instantiate a ChromeDriver class
-    String rootPath = System.getProperty("user.dir");
-    String driverPath = "/webdriver/chromedriver";
-    System.setProperty("webdriver.chrome.driver", rootPath + driverPath);
+    // String rootPath = System.getProperty("user.dir");
+    // String driverPath = "/webdriver/chromedriver";
+    // System.setProperty("webdriver.chrome.driver", rootPath + driverPath);
 
+    // Accept Google cookies by first time and go to Google home page
     final WebDriver driver = new ChromeDriver(options);
     driver.get(URL);
     driver.findElement(By.id("L2AGLb")).click();
-  }
 
-  /**
-   * Driver constructor
-   * 
-   * @param searchText
-   */
-  public ChromeBrowser(String searchText) {
-    WebDriver driver = new ChromeDriver();
+    // Search the text in Google
     WebElement searchBox = driver.findElement(By.name("q"));
     searchBox.sendKeys(searchText);
     searchBox.submit();
