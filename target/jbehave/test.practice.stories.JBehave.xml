@@ -1,0 +1,38 @@
+<story id="5f05d043-eb8f-492c-9f41-241aae5cff0c" path="test/practice/stories/JBehave.story" title="">
+<beforeSystemStorySteps>
+</beforeSystemStorySteps>
+<beforeUserStorySteps>
+</beforeUserStorySteps>
+<scenario id="13fedf36-6d28-4991-827a-764a86f01456" keyword="Scenario:" title="I have the Google home page in a Chrome browser and search for &quot;JBehave&quot;">
+<beforeSystemScenarioSteps>
+</beforeSystemScenarioSteps>
+<beforeUserScenarioSteps>
+</beforeUserScenarioSteps>
+<steps>
+<step outcome="failed" keyword="FAILED">Given A <parameter>Chrome browser</parameter> with the Google home page<failure>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;*[name=&apos;q&apos;]&quot;}
+  (Session info: chrome=114.0.5735.90)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.9.1&apos;, revision: &apos;eb2032df7f&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.4&apos;, java.version: &apos;20.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [02c07fb0ed3c9947f3c54cf229a4ce6c, findElement {using=name, value=q}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/tg/_zsl4_n574z...}, goog:chromeOptions: {debuggerAddress: localhost:64852}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:64852/devtoo..., se:cdpVersion: 114.0.5735.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 02c07fb0ed3c9947f3c54cf229a4ce6c</failure></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">And I search for <parameter>&quot;JBehave&quot;</parameter></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When A response includes <parameter>&quot;What is JBehave?&quot;</parameter></step>
+<step outcome="pending" keyword="PENDING">Then Status is OK for &quot;What is JBehave?&quot;<pendingMethod></pendingMethod></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">When A response not includes <parameter>&quot;What is JBehave?&quot;</parameter></step>
+<step outcome="pending" keyword="PENDING">Then Status is NOK for &quot;What is JBehave?&quot;<pendingMethod></pendingMethod></step>
+</steps>
+<afterUserScenarioSteps>
+</afterUserScenarioSteps>
+<afterSystemScenarioSteps>
+</afterSystemScenarioSteps>
+<timing phase="start">1685894864160</timing>
+<timing phase="end">1685894868440</timing>
+</scenario>
+<afterUserStorySteps>
+</afterUserStorySteps>
+<afterSystemStorySteps>
+</afterSystemStorySteps>
+</story>

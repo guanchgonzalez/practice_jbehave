@@ -45,6 +45,7 @@ public class ChromeBrowser {
    * @param searchText
    */
   public ChromeBrowser(String searchText) {
+    WebDriver driver = new ChromeDriver();
     WebElement searchBox = driver.findElement(By.name("q"));
     searchBox.sendKeys(searchText);
     searchBox.submit();
