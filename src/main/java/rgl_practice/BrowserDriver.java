@@ -4,12 +4,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.UnreachableBrowserException;
-// import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.time.Duration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserDriver {
   
   private static WebDriver browDriver;
+  private static WebElement res4w;
 
   public synchronized static WebDriver getCurrentDriver() {
     System.out.println("Instantiating browser");
@@ -71,10 +76,16 @@ public class BrowserDriver {
     }
   }
 
-  public static void loadPage(String url) {
+  public static WebElement loadPage(String url, String clickableElem) {
     System.out.println("Entering into " + url);
     getCurrentDriver().get(url);
-    // browDriver.findElement(By.id("L2AGLb")).click();
+    // Accept Google cookies when needed
+    if (getCurrentDriver().findElement(By.id("L2AGLb")) != null) {
+      getCurrentDriver().findElement(By.id("L2AGLb")).click();
+    }
+    res4w = new WebDriverWait(getCurrentDriver(), Duration.ofSeconds(5))
+                  .until(ExpectedConditions.elementToBeClickable(By.id(clickableElem)));
+    return res4w;
   }
 
 }

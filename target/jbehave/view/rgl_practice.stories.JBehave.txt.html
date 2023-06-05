@@ -20,15 +20,12 @@ BeforeSystemScenarioSteps
 BeforeUserScenarioSteps
 
 Given A Chrome browser with Google Home Page searching for "JBehave" (FAILED)
-(org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=114.0.5735.90)
+(org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: realbox (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: '4.9.1', revision: 'eb2032df7f'
 System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.4', java.version: '20.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ea42fd22a48f1882cc2e05976b3a1e78, sendKeysToElement {id=48B1150F3EEFE9161FA543FF6130EA1A_element_2, value=[Ljava.lang.CharSequence;@2203b932}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/tg/_zsl4_n574z...}, goog:chromeOptions: {debuggerAddress: localhost:52323}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:52323/devtoo..., se:cdpVersion: 114.0.5735.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (ea42fd22a48f1882cc2e05976b3a1e78)] -> name: q]
-Session ID: ea42fd22a48f1882cc2e05976b3a1e78)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/tg/_zsl4_n574z...}, goog:chromeOptions: {debuggerAddress: localhost:56718}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56718/devtoo..., se:cdpVersion: 114.0.5735.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3d5b39d1c0c6367ae0704016f18480e7)
 When Response includes "What is JBehave?" (NOT PERFORMED)
 Then Status is OK for "What is JBehave?" (NOT PERFORMED)
 When Response not includes "What is JBehave?" (NOT PERFORMED)

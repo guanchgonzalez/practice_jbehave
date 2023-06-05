@@ -6,13 +6,14 @@ import org.jbehave.core.annotations.When;
 import org.jbehave.core.annotations.Alias;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
 import rgl_practice.BrowserDriver;
 
 public class JBehaveSteps {
 
-  private final WebDriver rglBrowser = BrowserDriver.getCurrentDriver();
+  private WebDriver rglBrowser = BrowserDriver.getCurrentDriver();
+  private WebElement rglRes;
 
   @Given("A Chrome browser with Google Home Page searching for $inTex") 
   public void givenAChromeBrowserWithGoogleHomePageSearchingFor(String inText) {
@@ -20,17 +21,12 @@ public class JBehaveSteps {
 
     // Start browser
     String googleHomePage = "https://www.google.com";
-    BrowserDriver.loadPage(googleHomePage);
-
-    // Accept Google cookies when needed
-    // BrowserDriver.getCurrentDriver().findElement(By.id("L2AGLb")).click();
-    Assert.assertTrue(BrowserDriver.getCurrentDriver().findElement(By.id("L2AGLb")).isDisplayed());
+    String visibleElem = "realbox";
+    rglRes = BrowserDriver.loadPage(googleHomePage, visibleElem);
 
     // Search for inText
-    // WebElement searchBox = BrowserDriver.getCurrentDriver().findElement(By.name("q"));
-    // searchBox.sendKeys(inText);
-    // searchBox.submit();
-    BrowserDriver.getCurrentDriver().findElement(By.name("q")).sendKeys(inText);
+    BrowserDriver.getCurrentDriver().findElement(By.id("input")).sendKeys(inText);
+    // rglBrowser.findElement(By.id("input")).sendKeys(inText);
   }
 
   @When("Response includes $outText")
