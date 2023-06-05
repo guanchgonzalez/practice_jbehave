@@ -9,10 +9,9 @@ BeforeSystemScenarioSteps
 
 BeforeUserScenarioSteps
 
-Given A Chrome browser with Google Home Page searching for "JBehave"
-When Response includes "What is JBehave?" (FAILED)
-(org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.className: v7W49e (tried for 10 second(s) with 500 milliseconds interval))
-Then Status is OK (NOT PERFORMED)
+Given A Chrome browser with Google Home Page searching for JBehave
+When Response includes What is JBehave?
+Then Status is OK
 AfterUserScenarioSteps
 
 AfterSystemScenarioSteps

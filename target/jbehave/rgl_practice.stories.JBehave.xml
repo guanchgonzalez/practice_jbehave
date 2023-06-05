@@ -1,24 +1,24 @@
-<story id="6de255a3-3504-49e4-b323-58d59a79e36c" path="rgl_practice/stories/JBehave.story" title="">
+<story id="08194fc8-99f6-4104-aac2-c493436bd703" path="rgl_practice/stories/JBehave.story" title="">
 <beforeSystemStorySteps>
 </beforeSystemStorySteps>
 <beforeUserStorySteps>
 </beforeUserStorySteps>
-<scenario id="b57c7298-cd96-46b6-931a-c394bb446106" keyword="Scenario:" title="I have the Google home page in a Chrome browser and search for &quot;JBehave&quot;">
+<scenario id="5386a6fe-bbdd-4276-aa4c-6c8a746f7cb0" keyword="Scenario:" title="I have the Google home page in a Chrome browser and search for &quot;JBehave&quot;">
 <beforeSystemScenarioSteps>
 </beforeSystemScenarioSteps>
 <beforeUserScenarioSteps>
 </beforeUserScenarioSteps>
 <steps>
-<step outcome="successful">Given A Chrome browser with Google Home Page searching for <parameter>&quot;JBehave&quot;</parameter></step>
-<step outcome="failed" keyword="FAILED">When Response includes <parameter>&quot;What is JBehave?&quot;</parameter><failure>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.className: v7W49e (tried for 10 second(s) with 500 milliseconds interval)</failure></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">Then Status is <parameter>OK</parameter></step>
+<step outcome="successful">Given A Chrome browser with Google Home Page searching for <parameter>JBehave</parameter></step>
+<step outcome="successful">When Response includes <parameter>What is JBehave?</parameter></step>
+<step outcome="successful">Then Status is <parameter>OK</parameter></step>
 </steps>
 <afterUserScenarioSteps>
 </afterUserScenarioSteps>
 <afterSystemScenarioSteps>
 </afterSystemScenarioSteps>
-<timing phase="start">1685970290624</timing>
-<timing phase="end">1685970302054</timing>
+<timing phase="start">1685976812854</timing>
+<timing phase="end">1685976815559</timing>
 </scenario>
 <afterUserStorySteps>
 </afterUserStorySteps>

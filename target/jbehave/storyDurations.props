@@ -1,6 +1,6 @@
 #org.jbehave.core.embedder.StoryManager
-#Mon Jun 05 14:05:02 WEST 2023
-rgl_practice/stories/JBehave.story=11000
-threadAverage=11000
+#Mon Jun 05 15:53:35 WEST 2023
+rgl_practice/stories/JBehave.story=2000
+threadAverage=2000
 threads=1
-total=11000
+total=2000

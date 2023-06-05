@@ -60,8 +60,10 @@ public class BrowserDriver {
 
   public static void close() {
     try {
-      browDriver.quit();
-      browDriver = null;
+      if (browDriver != null) {
+        browDriver.quit();
+        browDriver = null;
+      }
       System.out.println("Closed browser");
     } 
     catch (UnreachableBrowserException e) {
