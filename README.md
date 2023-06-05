@@ -28,7 +28,16 @@ mvn -version
 
 In the path of your choice clone this GitHub repository:
 
-```git clone git@github.com:guanchgonzalez/practice_jbehave.git```
+`git clone git@github.com:guanchgonzalez/practice_jbehave.git`
+
+
+## Chrome WebDriver
+
+In webdriver/ path you can see the Chrome driver binary file for a Mac 64bits platform and latest Chrome release (114.0.5735.90). This is the interface between the installed browser into the host where you deploy the project and the Selenium driver managed by Maven.
+For other environments (different platform and/or different Chrome version), you can substitute the file by the one you need from the [Chrome WebDriver official site](https://chromedriver.chromium.org/downloads).
+
+
+## Maven libraries issue
 
 To force the download of all the required libraries from the [Maven Repository](https://mvnrepository.com/) execute these commands:
 
