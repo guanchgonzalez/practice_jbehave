@@ -1,9 +1,9 @@
-<story id="70511eaf-353a-4234-a851-5893156acc5c" path="rgl_practice/stories/JBehave.story" title="">
+<story id="6de255a3-3504-49e4-b323-58d59a79e36c" path="rgl_practice/stories/JBehave.story" title="">
 <beforeSystemStorySteps>
 </beforeSystemStorySteps>
 <beforeUserStorySteps>
 </beforeUserStorySteps>
-<scenario id="049822ac-f48b-4bfc-9d38-946b6d6e0538" keyword="Scenario:" title="I have the Google home page in a Chrome browser and search for &quot;JBehave&quot;">
+<scenario id="b57c7298-cd96-46b6-931a-c394bb446106" keyword="Scenario:" title="I have the Google home page in a Chrome browser and search for &quot;JBehave&quot;">
 <beforeSystemScenarioSteps>
 </beforeSystemScenarioSteps>
 <beforeUserScenarioSteps>
@@ -17,8 +17,8 @@
 </afterUserScenarioSteps>
 <afterSystemScenarioSteps>
 </afterSystemScenarioSteps>
-<timing phase="start">1685969097463</timing>
-<timing phase="end">1685969109065</timing>
+<timing phase="start">1685970290624</timing>
+<timing phase="end">1685970302054</timing>
 </scenario>
 <afterUserStorySteps>
 </afterUserStorySteps>
