@@ -1,4 +1,4 @@
-package test.practice;
+package rgl_practice;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -22,7 +22,7 @@ import org.jbehave.core.steps.ParameterConverters;
 import org.jbehave.core.steps.ParameterConverters.DateConverter;
 import org.jbehave.core.steps.ParameterConverters.ExamplesTableConverter;
 import org.junit.runner.RunWith;
-import test.practice.steps.JBehaveSteps;
+import rgl_practice.steps.JBehaveSteps;
 
 import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 import static org.jbehave.core.reporters.Format.CONSOLE;

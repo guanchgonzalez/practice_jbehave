@@ -1,40 +1,41 @@
-package test.practice.steps;
+package rgl_practice.steps;
 
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.jbehave.core.annotations.Alias;
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import test.practice.BrowserDriver;
-// import test.practice.ChromeBrowser;
+import rgl_practice.BrowserDriver;
 
 public class JBehaveSteps {
-  
-  // private ChromeBrowser chromeBrowser = new ChromeBrowser();
 
-  @Given("A Chrome Browser with $googleHomePage and search for $inTex") 
-  public void givenAChromeBrowserWithAndSearchFor(String googleHomePage, String inText) {
+  private final WebDriver rglBrowser = BrowserDriver.getCurrentDriver();
+
+  @Given("A Chrome browser with Google Home Page searching for $inTex") 
+  public void givenAChromeBrowserWithGoogleHomePageSearchingFor(String inText) {
     System.out.println("Starting browser");
 
     // Start browser
-    BrowserDriver.getCurrentDriver().get(googleHomePage);
+    String googleHomePage = "https://www.google.com";
+    BrowserDriver.loadPage(googleHomePage);
 
     // Accept Google cookies when needed
+    // BrowserDriver.getCurrentDriver().findElement(By.id("L2AGLb")).click();
     Assert.assertTrue(BrowserDriver.getCurrentDriver().findElement(By.id("L2AGLb")).isDisplayed());
 
     // Search for inText
-    WebElement searchBox = BrowserDriver.getCurrentDriver().findElement(By.name("q"));
-    searchBox.sendKeys(inText);
-    searchBox.submit();
-
+    // WebElement searchBox = BrowserDriver.getCurrentDriver().findElement(By.name("q"));
+    // searchBox.sendKeys(inText);
+    // searchBox.submit();
+    BrowserDriver.getCurrentDriver().findElement(By.name("q")).sendKeys(inText);
   }
 
-  
-  @When("A response includes $outText")
-  @Alias("A response not includes $outText")
-  public void whenAResponseIncludes(String outText) {
+  @When("Response includes $outText")
+  @Alias("Response not includes $outText")
+  public void whenResponseIncludes(String outText) {
     System.out.println("Getting response");
     //chromeBrowser.responseContains(outText);
   }

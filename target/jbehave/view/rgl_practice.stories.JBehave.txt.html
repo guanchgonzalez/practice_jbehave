@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>rgl_practice.stories.JBehave</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+ 
+<script type="syntaxhighlighter" class="brush: txt"><![CDATA[
+
+(rgl_practice/stories/JBehave.story)
+BeforeSystemStorySteps
+
+BeforeUserStorySteps
+
+Scenario: I have the Google home page in a Chrome browser and search for "JBehave"
+BeforeSystemScenarioSteps
+
+BeforeUserScenarioSteps
+
+Given A Chrome browser with Google Home Page searching for "JBehave" (FAILED)
+(org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=114.0.5735.90)
+Build info: version: '4.9.1', revision: 'eb2032df7f'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.4', java.version: '20.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ea42fd22a48f1882cc2e05976b3a1e78, sendKeysToElement {id=48B1150F3EEFE9161FA543FF6130EA1A_element_2, value=[Ljava.lang.CharSequence;@2203b932}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/tg/_zsl4_n574z...}, goog:chromeOptions: {debuggerAddress: localhost:52323}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:52323/devtoo..., se:cdpVersion: 114.0.5735.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (ea42fd22a48f1882cc2e05976b3a1e78)] -> name: q]
+Session ID: ea42fd22a48f1882cc2e05976b3a1e78)
+When Response includes "What is JBehave?" (NOT PERFORMED)
+Then Status is OK for "What is JBehave?" (NOT PERFORMED)
+When Response not includes "What is JBehave?" (NOT PERFORMED)
+Then Status is NOK for "What is JBehave?" (NOT PERFORMED)
+AfterUserScenarioSteps
+
+AfterSystemScenarioSteps
+
+
+AfterUserStorySteps
+
+AfterSystemStorySteps
+
+
+
+]]></script>
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>

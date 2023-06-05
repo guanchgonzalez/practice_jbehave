@@ -1,13 +1,10 @@
-package test.practice;
-
-// import java.lang.invoke.ClassSpecializer.FactoryBrowser;
+package rgl_practice;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.UnreachableBrowserException;
-import org.openqa.selenium.By;
-
+// import org.openqa.selenium.By;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BrowserDriver {
@@ -15,13 +12,17 @@ public class BrowserDriver {
   private static WebDriver browDriver;
 
   public synchronized static WebDriver getCurrentDriver() {
+    System.out.println("Instantiating browser");
     if (browDriver == null) {
       try {
         // Insert proxy location between browser and client
-        String rootPath = System.getProperty("user.dir");
-        String driverPath = "/webdriver/chromedriver";
-        System.setProperty("webdriver.chrome.driver", rootPath + driverPath);
+        // String rootPath = System.getProperty("user.dir");
+        // String driverPath = "/webdriver/chromedriver";
+        // System.setProperty("webdriver.chrome.driver", rootPath + driverPath);
         String webdriver = System.getProperty("browser", "chrome");
+        // String wcd = System.getProperty("/webdriver/chromedriver");
+        // System.out.print("webdriver.chrome.driver = " + wcd);
+        // String webdriver = "chrome";
         System.out.println("Selected driver: " + webdriver);
 
         // Launch browser
@@ -35,29 +36,21 @@ public class BrowserDriver {
   }
 
   private static void FactoryBrowser (String webdriver) {
-
-    switch(webdriver) {
-
-      case "chrome":
-
-        String[] optionList = {
-          "test-type",
-          "disable-popups-blocking",
-          "incognito",
-        };
-
-        // Instantiate ChromeOptions
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments(optionList);
-
-        // Launch Chrome browser
-        browDriver = new ChromeDriver(options);
-      
-        default:
-          throw new UnsupportedOperationException("Browser " + webdriver + " not supported");
+    if ("chrome".equals(webdriver)) {
+      String[] optionList = {
+        "test-type",
+        "disable-popups-blocking",
+        "incognito",
+      };
+      // Instantiate ChromeOptions
+      WebDriverManager.chromedriver().setup();
+      ChromeOptions options = new ChromeOptions();
+      options.addArguments(optionList);
+      // Launch Chrome browser
+      browDriver = new ChromeDriver(options);
+    } else {
+      throw new UnsupportedOperationException("Browser " + webdriver + " not supported");
     }
-
   }
 
   private static class BrowserCleanup implements Runnable {
@@ -78,10 +71,10 @@ public class BrowserDriver {
     }
   }
 
-  public static void LoadPage(String url) {
+  public static void loadPage(String url) {
     System.out.println("Entering into " + url);
     getCurrentDriver().get(url);
-    browDriver.findElement(By.id("L2AGLb")).click();
+    // browDriver.findElement(By.id("L2AGLb")).click();
   }
 
 }
