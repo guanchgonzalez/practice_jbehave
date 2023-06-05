@@ -1,31 +1,24 @@
-<story id="e5c7e20f-150d-4d86-9a55-e967d1f99df9" path="rgl_practice/stories/JBehave.story" title="">
+<story id="70511eaf-353a-4234-a851-5893156acc5c" path="rgl_practice/stories/JBehave.story" title="">
 <beforeSystemStorySteps>
 </beforeSystemStorySteps>
 <beforeUserStorySteps>
 </beforeUserStorySteps>
-<scenario id="343c4590-dfae-48a0-b45d-ad95afbf16e0" keyword="Scenario:" title="I have the Google home page in a Chrome browser and search for &quot;JBehave&quot;">
+<scenario id="049822ac-f48b-4bfc-9d38-946b6d6e0538" keyword="Scenario:" title="I have the Google home page in a Chrome browser and search for &quot;JBehave&quot;">
 <beforeSystemScenarioSteps>
 </beforeSystemScenarioSteps>
 <beforeUserScenarioSteps>
 </beforeUserScenarioSteps>
 <steps>
-<step outcome="failed" keyword="FAILED">Given A Chrome browser with Google Home Page searching for <parameter>&quot;JBehave&quot;</parameter><failure>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: realbox (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.9.1&apos;, revision: &apos;eb2032df7f&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.4&apos;, java.version: &apos;20.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.90, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/tg/_zsl4_n574z...}, goog:chromeOptions: {debuggerAddress: localhost:56718}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56718/devtoo..., se:cdpVersion: 114.0.5735.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3d5b39d1c0c6367ae0704016f18480e7</failure></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">When Response includes <parameter>&quot;What is JBehave?&quot;</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">Then Status is OK for <parameter>&quot;What is JBehave?&quot;</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">When Response not includes <parameter>&quot;What is JBehave?&quot;</parameter></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">Then Status is NOK for <parameter>&quot;What is JBehave?&quot;</parameter></step>
+<step outcome="successful">Given A Chrome browser with Google Home Page searching for <parameter>&quot;JBehave&quot;</parameter></step>
+<step outcome="failed" keyword="FAILED">When Response includes <parameter>&quot;What is JBehave?&quot;</parameter><failure>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.className: v7W49e (tried for 10 second(s) with 500 milliseconds interval)</failure></step>
+<step outcome="notPerformed" keyword="NOT PERFORMED">Then Status is <parameter>OK</parameter></step>
 </steps>
 <afterUserScenarioSteps>
 </afterUserScenarioSteps>
 <afterSystemScenarioSteps>
 </afterSystemScenarioSteps>
-<timing phase="start">1685951102902</timing>
-<timing phase="end">1685951109003</timing>
+<timing phase="start">1685969097463</timing>
+<timing phase="end">1685969109065</timing>
 </scenario>
 <afterUserStorySteps>
 </afterUserStorySteps>

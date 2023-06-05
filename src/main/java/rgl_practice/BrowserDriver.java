@@ -20,14 +20,7 @@ public class BrowserDriver {
     System.out.println("Instantiating browser");
     if (browDriver == null) {
       try {
-        // Insert proxy location between browser and client
-        // String rootPath = System.getProperty("user.dir");
-        // String driverPath = "/webdriver/chromedriver";
-        // System.setProperty("webdriver.chrome.driver", rootPath + driverPath);
         String webdriver = System.getProperty("browser", "chrome");
-        // String wcd = System.getProperty("/webdriver/chromedriver");
-        // System.out.print("webdriver.chrome.driver = " + wcd);
-        // String webdriver = "chrome";
         System.out.println("Selected driver: " + webdriver);
 
         // Launch browser
@@ -60,16 +53,16 @@ public class BrowserDriver {
 
   private static class BrowserCleanup implements Runnable {
     public void run() {
-      System.out.println("Closing browser");
+      System.out.println("Closing browser class");
       close();
     }
   }
 
   public static void close() {
     try {
-      getCurrentDriver().quit();
+      browDriver.quit();
       browDriver = null;
-      System.out.println("Closing browser");
+      System.out.println("Closed browser");
     } 
     catch (UnreachableBrowserException e) {
       System.out.println("Please close the browser by yourself");
@@ -78,12 +71,12 @@ public class BrowserDriver {
 
   public static WebElement loadPage(String url, String clickableElem) {
     System.out.println("Entering into " + url);
-    getCurrentDriver().get(url);
+    browDriver.get(url);
     // Accept Google cookies when needed
-    if (getCurrentDriver().findElement(By.id("L2AGLb")) != null) {
-      getCurrentDriver().findElement(By.id("L2AGLb")).click();
+    if (browDriver.findElement(By.id("L2AGLb")) != null) {
+      browDriver.findElement(By.id("L2AGLb")).click();
     }
-    res4w = new WebDriverWait(getCurrentDriver(), Duration.ofSeconds(5))
+    res4w = new WebDriverWait(browDriver, Duration.ofSeconds(10))
                   .until(ExpectedConditions.elementToBeClickable(By.id(clickableElem)));
     return res4w;
   }
