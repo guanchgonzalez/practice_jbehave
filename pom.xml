@@ -1,60 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>rgl_practice</groupId>
-  <artifactId>practice_jbehave</artifactId>
+  <groupId>com.guanchgonzalez.rgl.practice</groupId>
+  <artifactId>rgl-practice-jbehave</artifactId>
   <version>0.1-SNAPSHOT</version>
   <name>Practice JBehave Stories</name>
 
   <properties>
-    <jbehave.core.version>5.1.1</jbehave.core.version>
-    <jbehave.site.version>3.5</jbehave.site.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>20</maven.compiler.target>
+    <maven.compiler.source>20</maven.compiler.source>
+
+    <slf4j.version>2.0.7</slf4j.version>
+    <logback.version>1.4.7</logback.version>
+    <log4j-to-slf4j.version>2.20.0</log4j-to-slf4j.version>
+    <jbehave.version>5.1.1</jbehave.version>
+    <jbehave-site.version>3.5</jbehave-site.version>
     <selenium.version>4.9.1</selenium.version>
+    <webdrivermanager.version>5.3.3</webdrivermanager.version>
+    <hamcrest.version>2.2</hamcrest.version>
+    <prettier-maven-plugin.version>0.18</prettier-maven-plugin.version>
+    <prettier-java.version>2.0.0</prettier-java.version>
+    <guava.version>32.0.0-jre</guava.version>
     <embeddables>**/*Stories.java</embeddables>
   </properties>
 
   <dependencies>
-  <!-- https://mvnrepository.com/artifact/org.jbehave/jbehave-core -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>log4j-over-slf4j</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.jbehave/jbehave-core -->
     <dependency>
       <groupId>org.jbehave</groupId>
       <artifactId>jbehave-core</artifactId>
-      <version>${jbehave.core.version}</version>
+      <version>${jbehave.version}</version>
     </dependency>
     <dependency>
       <groupId>org.jbehave</groupId>
       <artifactId>jbehave-core</artifactId>
-      <version>${jbehave.core.version}</version>
+      <version>${jbehave.version}</version>
       <classifier>resources</classifier>
       <type>zip</type>
     </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.jbehave.site/jbehave-site -->
     <dependency>
       <groupId>org.jbehave.site</groupId>
       <artifactId>jbehave-site-resources</artifactId>
-      <version>${jbehave.site.version}</version>
+      <version>${jbehave-site.version}</version>
       <type>zip</type>
     </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest -->
     <dependency>
       <groupId>org.hamcrest</groupId>
       <artifactId>hamcrest</artifactId>
-      <version>2.2</version>
+      <version>${hamcrest.version}</version>
       <scope>test</scope>
     </dependency>
+
     <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>32.0.0-jre</version>
-      <optional>true</optional>
+      <version>${guava.version}</version>
     </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
       <version>${selenium.version}</version>
     </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
     <!-- <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
@@ -77,40 +108,29 @@
     <!-- <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-chromium-driver</artifactId>
-      <version>${selenium.version}</version> 
+      <version>${selenium.version}</version>
     </dependency> -->
+
     <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
     <dependency>
       <groupId>io.github.bonigarcia</groupId>
       <artifactId>webdrivermanager</artifactId>
-      <version>5.3.3</version>
+      <version>${webdrivermanager.version}</version>
     </dependency>
   </dependencies>
 
   <build>
-    <resources>
-      <resource>
-        <directory>src/main/java</directory>
-        <filtering>true</filtering>
-        <excludes>
-          <exclude>**/*.java</exclude>
-        </excludes>
-      </resource>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>true</filtering>
-      </resource>
-    </resources>
     <pluginManagement>
       <plugins>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.11.0</version>
-          <configuration>
-            <source>20</source>
-            <target>20</target>
-          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.3.1</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -118,30 +138,32 @@
       <plugin>
         <groupId>org.jbehave</groupId>
         <artifactId>jbehave-maven-plugin</artifactId>
-        <version>${jbehave.core.version}</version>
+        <version>${jbehave.version}</version>
         <executions>
           <execution>
             <id>embeddable-stories</id>
             <phase>integration-test</phase>
+            <goals>
+              <goal>run-stories-as-embeddables</goal>
+            </goals>
             <configuration>
               <includes>
                 <include>${embeddables}</include>
               </includes>
-              <excludes />
               <ignoreFailureInStories>true</ignoreFailureInStories>
               <ignoreFailureInView>false</ignoreFailureInView>
               <threads>1</threads>
-              <metaFilters>
-                <metaFilter></metaFilter>
-              </metaFilters>
             </configuration>
-            <goals>
-              <goal>run-stories-as-embeddables</goal>
-            </goals>
           </execution>
         </executions>
+        <dependencies>
+          <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
-
 </project>

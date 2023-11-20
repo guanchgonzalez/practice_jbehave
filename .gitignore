@@ -3,13 +3,14 @@
 logs
 logs/*
 
+# Java
+target/
+
+# Idea
+.idea/
+
 # Visual Studio Code
-.vscode
-.vscode/*
+.vscode/
 
 # Misc
 .DS_Store
-*/.DS_Store
-*/*/.DS_Store
-*/*/*/.DS_Store
-*/*/*/*/.DS_Store

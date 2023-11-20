@@ -1,15 +1,11 @@
 package com.guanchgonzalez.rgl.practice;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.UnreachableBrowserException;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -82,18 +78,18 @@ public class BrowserDriver {
         }
     }
 
-    public static WebElement loadPage(String url, String clickableElem) {
+    public static WebDriver loadPage(String url) {
         LOGGER.info("Entering into {}", url);
 
-        webDriver.get(url);
+        WebDriver currentDriver = getCurrentDriver();
+
+        currentDriver.get(url);
 
         // Accept Google cookies when needed
-        if (webDriver.findElement(By.id("L2AGLb")) != null) {
-            webDriver.findElement(By.id("L2AGLb")).click();
+        if (currentDriver.findElement(By.id("L2AGLb")) != null) {
+            currentDriver.findElement(By.id("L2AGLb")).click();
         }
-        WebElement res4w = new WebDriverWait(webDriver, Duration.ofSeconds(10))
-            .until(ExpectedConditions.elementToBeClickable(By.id(clickableElem)));
 
-        return res4w;
+        return currentDriver;
     }
 }
