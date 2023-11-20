@@ -1,11 +1,23 @@
 package com.guanchgonzalez.rgl.practice;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+<<<<<<< HEAD
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.UnreachableBrowserException;
+=======
+import java.time.Duration;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.UnreachableBrowserException;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+>>>>>>> tmp
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -78,6 +90,7 @@ public class BrowserDriver {
         }
     }
 
+<<<<<<< HEAD
     public static WebDriver loadPage(String url) {
         LOGGER.info("Entering into {}", url);
 
@@ -91,5 +104,20 @@ public class BrowserDriver {
         }
 
         return currentDriver;
+=======
+    public static WebElement loadPage(String url, String clickableElem) {
+        LOGGER.info("Entering into {}", url);
+
+        webDriver.get(url);
+
+        // Accept Google cookies when needed
+        if (webDriver.findElement(By.id("L2AGLb")) != null) {
+            webDriver.findElement(By.id("L2AGLb")).click();
+        }
+        WebElement res4w = new WebDriverWait(webDriver, Duration.ofSeconds(10))
+            .until(ExpectedConditions.elementToBeClickable(By.id(clickableElem)));
+
+        return res4w;
+>>>>>>> tmp
     }
 }

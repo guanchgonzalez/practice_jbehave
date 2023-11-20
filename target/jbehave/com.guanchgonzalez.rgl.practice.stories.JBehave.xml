@@ -1,0 +1,27 @@
+<story id="879b4ac7-a441-4025-8228-c74b78fd923f" path="com/guanchgonzalez/rgl/practice/stories/JBehave.story" title="">
+<beforeSystemStorySteps>
+</beforeSystemStorySteps>
+<beforeUserStorySteps>
+</beforeUserStorySteps>
+<scenario id="ced00081-4752-401f-a161-f1eba0410d5d" keyword="Scenario:" title="I have the Google home page in a Chrome browser and search for &quot;JBehave&quot;">
+<beforeSystemScenarioSteps>
+</beforeSystemScenarioSteps>
+<beforeUserScenarioSteps>
+</beforeUserScenarioSteps>
+<steps>
+<step outcome="successful">Given A Chrome browser with Google Home Page searching for <parameter>JBehave</parameter></step>
+<step outcome="successful">When Response includes <parameter>What is JBehave?</parameter></step>
+<step outcome="successful">Then Status is <parameter>OK</parameter></step>
+</steps>
+<afterUserScenarioSteps>
+</afterUserScenarioSteps>
+<afterSystemScenarioSteps>
+</afterSystemScenarioSteps>
+<timing phase="start">1686118842991</timing>
+<timing phase="end">1686118846879</timing>
+</scenario>
+<afterUserStorySteps>
+</afterUserStorySteps>
+<afterSystemStorySteps>
+</afterSystemStorySteps>
+</story>

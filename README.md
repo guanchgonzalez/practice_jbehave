@@ -28,7 +28,7 @@ mvn -version
 
 In the path of your choice clone this GitHub repository:
 
-`git clone git@github.com:guanchgonzalez/practice_jbehave.git`
+`git clone https://github.com/guanchgonzalez/practice_jbehave.git`
 
 
 ## Chrome WebDriver
